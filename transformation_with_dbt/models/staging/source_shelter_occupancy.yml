@@ -1,0 +1,112 @@
+version: 2
+
+sources:
+  - name: shelter_occupancy
+    description: 'This is a database of shelter occupancy data migrated with API from Toronto Open Data'
+    database: analytics
+    schema: PPROJECT
+    tables:
+     - name: toronto_shelter_occupancy
+       description: 'This contains data of Daily Toronto shelter occupancy'
+       columns:
+         - name: idempotent_key
+           description: '{{ doc("toronto_shelter_idempotent_key")}}'
+           tests:
+             - unique
+             - not_null
+
+         - name: _id
+           description: '{{ doc("toronto_shelter__id")}}'
+        
+         - name: occupancy_date
+           description: '{{ doc("toronto_shelter_occupancy_date")}}'
+
+         - name: program_id
+           description: '{{ doc("toronto_shelter_program_id")}}'
+
+         - name: shelter_id
+           description: '{{ doc("toronto_shelter_shelter_id")}}'
+
+         - name: location_id
+           description: '{{ doc("toronto_shelter_location_id")}}'
+
+         - name: organization_id
+           description: '{{ doc("toronto_shelter_organization_id")}}'
+
+         - name: location_province
+           description: '{{ doc("toronto_shelter_location_province")}}'
+
+         - name: unoccupied_beds
+           description: '{{ doc("toronto_shelter_unoccupied_beds")}}'
+
+         - name: program_name
+           description: '{{ doc("toronto_shelter_program_name")}}'
+
+         - name: occupancy_rate_beds
+           description: '{{ doc("toronto_shelter_occupancy_rate_beds")}}'
+
+         - name: location_city
+           description: '{{ doc("toronto_shelter_location_city")}}'
+
+         - name: shelter_group
+           description: '{{ doc("toronto_shelter_shelter_group")}}'
+
+         - name: overnight_service_type
+           description: '{{ doc("toronto_shelter_overnight_service_type")}}'
+
+         - name: unavailable_rooms
+           description: '{{ doc("toronto_shelter_unavailable_rooms")}}'
+
+         - name: capacity_type
+           description: '{{ doc("toronto_shelter_capacity_type")}}'
+
+         - name: organization_name
+           description: '{{ doc("toronto_shelter_organization_name")}}'
+
+         - name: unoccupied_rooms
+           description: '{{ doc("toronto_shelter_unoccupied_rooms")}}'
+
+         - name: program_model
+           description: '{{ doc("toronto_shelter_program_model")}}'
+
+         - name: occupied_rooms
+           description: '{{ doc("toronto_shelter_occupied_rooms")}}'
+
+         - name: occupancy_rate_rooms_
+           description: '{{ doc("toronto_shelter_occupancy_rate_rooms")}}'
+
+         - name: service_user_count
+           description: '{{ doc("toronto_shelter_service_user_count")}}'
+
+         - name: location_address
+           description: '{{ doc("toronto_shelter_location_address")}}'
+
+         - name: capacity_actual_bed
+           description: '{{ doc("toronto_shelter_capacity_actual_bed")}}'
+
+         - name: capacity_actual_room
+           description: '{{ doc("toronto_shelter_capacity_actual_room")}}'
+
+         - name: location_name
+           description: '{{ doc("toronto_shelter_location_name")}}'
+
+         - name: sector
+           description: '{{ doc("toronto_shelter_sector")}}'
+
+         - name: capacity_funding_bed
+           description: '{{ doc("toronto_shelter_capacity_funding_bed")}}'
+
+         - name: program_area
+           description: '{{ doc("toronto_shelter_program_area")}}'
+
+         - name: unavailable_beds
+           description: '{{ doc("toronto_shelter_unavailable_beds")}}'
+
+         - name: occupied_beds
+           description: '{{ doc("toronto_shelter_occupied_beds")}}'
+
+         - name: on_postal_code
+           description: '{{ doc("toronto_shelter_location_postal_code")}}'
+
+         - name: capacity_funding_room
+           description: '{{ doc("toronto_shelter_capacity_funding_room")}}'
