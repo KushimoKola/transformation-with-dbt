@@ -1,25 +1,23 @@
-version: 2
-
-sources:
-  - name: shelter_occupancy
-    description: 'This is a database of shelter occupancy data migrated with API from Toronto Open Data'
-    database: analytics
-    schema: PPROJECT
-    tables:
-     - name: toronto_shelter_occupancy
-       description: 'This contains data of Daily Toronto shelter occupancy'
-       columns:
+models:
+  - name: stg_toronto_shelter_occupancy
+    description: This table contains information about toronto shelter occupancy data
+    columns:
          - name: idempotent_key
            description: '{{ doc("toronto_shelter_idempotent_key")}}'
            tests:
              - unique
              - not_null
 
-         - name: _id
+         - name: guid
            description: '{{ doc("toronto_shelter__id")}}'
+           tests:
+             - not_null
         
          - name: occupancy_date
            description: '{{ doc("toronto_shelter_occupancy_date")}}'
+           data_type: date
+           tests:
+             - not_null
 
          - name: program_id
            description: '{{ doc("toronto_shelter_program_id")}}'
@@ -72,7 +70,7 @@ sources:
          - name: occupied_rooms
            description: '{{ doc("toronto_shelter_occupied_rooms")}}'
 
-         - name: occupancy_rate_rooms_
+         - name: occupancy_rate_rooms
            description: '{{ doc("toronto_shelter_occupancy_rate_rooms")}}'
 
          - name: service_user_count
@@ -105,7 +103,7 @@ sources:
          - name: occupied_beds
            description: '{{ doc("toronto_shelter_occupied_beds")}}'
 
-         - name: on_postal_code
+         - name: location_postal_code
            description: '{{ doc("toronto_shelter_location_postal_code")}}'
 
          - name: capacity_funding_room

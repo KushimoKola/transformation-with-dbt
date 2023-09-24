@@ -112,3 +112,17 @@ cannot import name 'FailedToConnectException' from 'dbt.exceptions' (/Users/kola
     from dbt.exceptions import (
 ImportError: cannot import name 'FailedToConnectException' from 'dbt.exceptions' (/Users/kolawole/opt/anaconda3/lib/python3.8/site-packages/dbt/exceptions.py)
 
+[0m01:02:45.334073 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a2c5d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a3c750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a3d310>]}
+
+
+============================== 01:02:45.336896 | 7a07f745-660e-415b-9b5a-23471edd3542 ==============================
+[0m01:02:45.336896 [info ] [MainThread]: Running with dbt=1.6.3
+[0m01:02:45.337235 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/kolawole/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m01:02:45.337549 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/kolawole/Documents/PersonalProjects/transformation-with-dbt/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m01:02:45.337892 [debug] [MainThread]: Command `dbt run` failed at 01:02:45.337830 after 0.02 seconds
+[0m01:02:45.338101 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a213d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a3d190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110a3cf90>]}
+[0m01:02:45.338299 [debug] [MainThread]: Flushing usage events

@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: toronto_transit_commission_delay_data
+    description: 'This is a database of TTC delay data migrated with API from Toronto Open Data'
+    database: analytics
+    schema: google_drive
+    tables:
+      - name: ttc_bus_delay_data
+        description: 'This contains TTC bus delay data'
+      - name: ttc_streetcar_delay_data
+        description: 'This contains TTC streetcar delay data'
+      - name: ttc_subway_delay_data
+        description: 'This contains TTC subway delay data'

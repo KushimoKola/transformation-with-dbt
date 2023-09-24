@@ -19,7 +19,7 @@ final as (
         location_postal_code,
         location_province,
         occupancy_rate_beds::int as occupancy_rate_beds,
-        occupancy_rate_rooms_::int as occupancy_rate_rooms,
+        occupancy_rate_rooms::int as occupancy_rate_rooms,
         occupied_beds::int as occupied_beds,
         occupied_rooms::int as occupied_rooms,
         organization_id,
