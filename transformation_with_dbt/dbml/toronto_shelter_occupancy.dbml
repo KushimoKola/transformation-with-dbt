@@ -1,0 +1,111 @@
+// DIMENSION TABLES
+
+Table dim_date {
+  id int [primary key]
+  Year int
+  Month int
+  Day int
+  Weekday int
+}
+
+Table dim_location {
+  id int [primary key]
+  Street varchar
+  City_Block varchar
+  location_city varchar
+  location_postal_code varchar
+  location_province varchar
+}
+
+Table dim_organization {
+  id int [primary key]
+  organization_name varchar
+}
+
+Table dim_program {
+  id int [primary key]
+  program_area varchar
+  program_model varchar
+  program_name varchar
+}
+
+Table dim_shelter {
+  id int [primary key]
+  shelter_group varchar
+}
+
+Table dim_service_type {
+  id int [primary key]
+  overnight_service_type varchar
+  program_model varchar
+}
+
+Table dim_sector {
+  id int [primary key]
+  sector varchar
+}
+
+// INTERMEDIATE TABLES
+
+Table fct_org_program_stats {
+  id int [primary key]
+  total_programs int
+  total_organizations int
+  org_program_id int [ref: > int_org_program.id]
+}
+
+Table fct_location_shelter_stats {
+  id int [primary key]
+  total_locations int
+  total_shelters int
+  location_shelter_id int [ref: > int_location_shelter.id]
+}
+
+Table int_org_program [headercolor: #0f2b0b] {
+  id int [primary key]
+  organization_id int [ref: > dim_organization.id]
+  program_id int [ref: > dim_program.id]
+}
+
+Table int_location_shelter [headercolor: #0f2b0b] {
+  id int [primary key]
+  location_id int [ref: > dim_location.id]
+  shelter_id int [ref: > dim_shelter.id]
+}
+
+// FACT TABLES
+
+Table fct_occupancy {
+  id int [primary key]
+  occupancy_rate_beds int
+  occupancy_rate_rooms int
+  occupied_beds int
+  service_user_count int
+  unoccupied_rooms int
+  date_id int [ref: > dim_date.id]
+  location_id int [ref: > dim_location.id]
+  organization_id int [ref: > dim_organization.id]
+  program_id int [ref: > dim_program.id]
+  shelter_id int [ref: > dim_shelter.id]
+  sector_id int [ref: > dim_sector.id]
+}
+
+Table fct_capacity {
+  id int [primary key]
+  capacity_funding_bed int
+  capacity_funding_room int
+  unavailable_beds int
+  unavailable_rooms int
+  date_id int [ref: > dim_date.id]
+  location_id int [ref: > dim_location.id]
+  organization_id int [ref: > dim_organization.id]
+}
+
+Table fct_Service {
+  id int [primary key]
+  service_user_count int
+  date_id int [ref: > dim_date.id]
+  program_id int [ref: > dim_program.id]
+  organization_id int [ref: > dim_organization.id]
+  service_type_id int [ref: > dim_service_type.id]
+}

@@ -54,3 +54,6 @@ The purpose is to run all operation from a virtual env
     You should have something as this
     
     ![dbt debug](.img/1.img)
+
+    ERD for warehouse deveopment - Toronto Shelter Occupancy
+    ![shelter occupancy](.img/ERD_Toronto_Shelter_Occupancy.png)
