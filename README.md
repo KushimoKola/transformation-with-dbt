@@ -3,10 +3,10 @@
 This is a data analytics project that focuses on:
  - Modern Data Stack technologies
  - Fetch data with API (using Python)
- - Migrate the data into Snowflake (using Airbyte)
+ - Migrate the data into Snowflake (using Fivetran)
  - Transform the data in Snowflake (using dbt)
  - Develop models that answers specific question in Snowflake (using dbt)
- - Visualize in Tableau/PowerBI/Metabase
+ - Visualize in Tableau
 
 Follow along as I take you through the process.
 
