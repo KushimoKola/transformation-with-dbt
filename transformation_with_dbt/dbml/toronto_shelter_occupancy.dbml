@@ -1,17 +1,20 @@
 // DIMENSION TABLES
 
 Table dim_date {
-  id int [primary key]
-  Year int
-  Month int
-  Day int
-  Weekday int
+  calendar_date int [primary key]
+  date_week date
+  date_month date
+  date_quarter date
+  date_year date
+  day_of_month int
+  month_num int
+  quarter_num int
+  year_num int
 }
 
 Table dim_location {
   id int [primary key]
   Street varchar
-  City_Block varchar
   location_city varchar
   location_postal_code varchar
   location_province varchar
@@ -82,7 +85,7 @@ Table fct_occupancy {
   occupied_beds int
   service_user_count int
   unoccupied_rooms int
-  date_id int [ref: > dim_date.id]
+  date_id int [ref: > dim_date.calendar_date]
   location_id int [ref: > dim_location.id]
   organization_id int [ref: > dim_organization.id]
   program_id int [ref: > dim_program.id]
@@ -96,7 +99,7 @@ Table fct_capacity {
   capacity_funding_room int
   unavailable_beds int
   unavailable_rooms int
-  date_id int [ref: > dim_date.id]
+  date_id int [ref: > dim_date.calendar_date]
   location_id int [ref: > dim_location.id]
   organization_id int [ref: > dim_organization.id]
 }
@@ -104,7 +107,7 @@ Table fct_capacity {
 Table fct_Service {
   id int [primary key]
   service_user_count int
-  date_id int [ref: > dim_date.id]
+  date_id int [ref: > dim_date.calendar_date]
   program_id int [ref: > dim_program.id]
   organization_id int [ref: > dim_organization.id]
   service_type_id int [ref: > dim_service_type.id]
