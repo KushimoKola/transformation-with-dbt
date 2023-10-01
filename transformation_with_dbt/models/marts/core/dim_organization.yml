@@ -1,0 +1,14 @@
+models:
+  - name: dim_organization
+    description: This table contains information about the organization providing the shelter service
+    columns:
+         - name: organization_guid
+           description: '{{ doc("toronto_shelter_organization_guid")}}'
+           tests:
+             - unique
+             - not_null
+
+         - name: organization_name
+           description: '{{ doc("toronto_shelter_organization_name")}}'
+           tests:
+             - not_null

@@ -1,0 +1,19 @@
+models:
+  - name: dim_program
+    description: This table contains information about unique identifier of program in the toronto shelter program
+    columns:
+         - name: program_guid
+           description: '{{ doc("toronto_shelter_program_guid")}}'
+           tests:
+             - unique
+             - not_null
+
+         - name: program_name
+           description: '{{ doc("toronto_shelter_program_name")}}'
+           tests:
+             - not_null
+
+         - name: program_model
+           description: '{{ doc("toronto_shelter_program_model")}}'
+           tests:
+             - not_null

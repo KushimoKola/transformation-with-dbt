@@ -34,7 +34,7 @@ unpivoted_location AS (
     UNPIVOT (street FOR locations in (location_address_1, location_address_2))
 ),
 final AS (
-    SELECT
+    SELECT DISTINCT
        /*Ideally, POSTAL_CODE and STREET would have been fine, but we had to 
        PROVINCE, just in case a shelter exists in another province with same
        street address, though this is unlikely for postal code. 

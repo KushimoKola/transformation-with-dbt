@@ -1,6 +1,10 @@
 # Shelter Occupancy Docs
 This files contantain docs blocks for Toronto Shelter Occupancy sources
 
+# WHY DISTINCT? - 10/01/2023
+- I used `DISTINCT` in my Dimension tables because there was no join, so I need 
+  `DISTINCT` to return only unique for the dimension models.
+
 ## Unique Keys
 This section contains unique keys that identifies each entries
 
@@ -23,6 +27,10 @@ Unique ID to consistently identify organizations even if the organization name c
 
 {% docs toronto_shelter_organization_name %}
 Name of the organization providing the overnight service
+{% enddocs %}
+
+{% docs toronto_shelter_organization_guid %}
+Surrogate key created to uniquely identify organizations - harshed from `organization_id` and `organization_name`
 {% enddocs %}
 
 ## Shelter Information
@@ -77,13 +85,16 @@ Name of the program
 {% enddocs %}
 
 {% docs toronto_shelter_program_model %}
-A classification of shelter programs as either Emergency or Transitional.
+A classification of shelter programs as either Emergency or Transitional. - We also have null which was renamed `Not Specified`
 {% enddocs %}
 
 {% docs toronto_shelter_program_area %}
 Indicates whether the program is part of the base shelter and overnight services system, or is part of a temporary response program.
 {% enddocs %}
 
+{% docs toronto_shelter_program_guid %}
+Surrogate key created to uniquely identify organizations - harshed from `organization_id` and `organization_name`
+{% enddocs %}
 ## Sector Information
 {% docs toronto_shelter_sector %}
 A means of categorizing homeless shelters based on the gender, age and household size of the service user group(s) served at the shelter location. There are currently five shelter sectors in Toronto: adult men, adult women, mixed adult (co-ed or all gender), youth and family.
