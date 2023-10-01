@@ -1,0 +1,16 @@
+models:
+  - name: int_duplicate_non_matching_location
+    description: This table contains information about an intermediate model that resolves duplicated and/or non matching addresses
+    columns:
+         - name: location_postal_code
+           description: '{{ doc("toronto_shelter_location_postal_code")}}'
+           tests:
+             - unique
+             - not_null
+
+         - name: location_address_1
+           description: This is the primary address attributed to a postal code
+
+         - name: location_address_2
+           description: This is the second address attributed to a postal code
+        

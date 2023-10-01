@@ -59,6 +59,14 @@ City of the location of the program
 Province of the location of the program
 {% enddocs %}
 
+{% docs toronto_shelter_location_guid %}
+This is the unique identifier for the shelter location
+{% enddocs %}
+
+{% docs toronto_shelter_address %}
+This is a concatenaton street, city, province, and postal code - a complete address
+{% enddocs %}
+
 ## Program Information
 {% docs toronto_shelter_program_id %}
 Unique ID to consistently identify programs even if the program name changes.

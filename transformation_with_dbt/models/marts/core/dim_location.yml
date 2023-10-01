@@ -1,0 +1,28 @@
+models:
+  - name: dim_location
+    description: This table contains information about location in the toronto shelter program
+    columns:
+         - name: location_guid
+           description: '{{ doc("toronto_shelter_location_guid")}}'
+           tests:
+             - unique
+             - not_null
+
+         - name: street
+           description: '{{ doc("toronto_shelter_location_address")}}'
+
+         - name: city
+           description: '{{ doc("toronto_shelter_location_city")}}'
+        
+         - name: postal_code
+           description: '{{ doc("toronto_shelter_location_postal_code")}}'
+           tests:
+             - not_null
+
+         - name: province
+           description: '{{ doc("toronto_shelter_location_province")}}'
+           tests:
+             - not bul
+
+         - name: shelter_address
+           description: '{{ doc("toronto_shelter_address")}}'
