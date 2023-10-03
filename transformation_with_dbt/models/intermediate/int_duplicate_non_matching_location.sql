@@ -51,9 +51,18 @@ final_addresses AS (
         END AS location_address_2
     FROM combined_addresses
     QUALIFY ROW_NUMBER() OVER (PARTITION BY location_postal_code ORDER BY location_postal_code DESC) = 1
+),
+unpivot_location AS (
+    SELECT
+        location_postal_code AS postal_code,
+        street
+    FROM final_addresses
+    UNPIVOT (street FOR locations IN (location_address_1, location_address_2))
+),
+final AS (
+    SELECT
+        postal_code,
+        street
+    FROM unpivot_location
 )
-SELECT
-    location_postal_code,
-    location_address_1,
-    location_address_2
-FROM final_addresses
+SELECT * FROM final
