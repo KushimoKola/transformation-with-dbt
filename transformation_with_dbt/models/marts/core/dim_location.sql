@@ -1,5 +1,6 @@
 WITH shelter_location AS (
     SELECT
+        location_id,
         location_city AS city,
         location_postal_code AS postal_code,
         location_province AS province
@@ -13,6 +14,7 @@ deduplicate_non_matching_location AS (
 ),
 merged_location AS (
     SELECT
+        a.location_id,
         a.city,
         a.postal_code,
         a.province,
@@ -30,6 +32,7 @@ final AS (
        such as 'M5A 2N3'
         */
         {{ dbt_utils.generate_surrogate_key(['postal_code', 'street', 'province']) }} AS location_guid,
+        location_id,
         street,
         city,
         postal_code,

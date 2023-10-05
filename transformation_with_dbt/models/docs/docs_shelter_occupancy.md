@@ -101,6 +101,10 @@ A means of categorizing homeless shelters based on the gender, age and household
 {% enddocs %}
 
 ## Overnight Service Type Information
+{% docs toronto_shelter_type_guid %}
+This is the unique identifier for shelter service type.
+{% enddocs %}
+
 {% docs toronto_shelter_overnight_service_type %}
 Identifies the type of overnight service being provided. (Options are: Shelter, 24-Hour Respite, Motel/Hotel, Interim Housing, Warming Centre, 24-Hour Women's Drop-in, Isolation/Recovery Site)
 {% enddocs %}
