@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-dbt-core = "==1.6.3"
+dbt-core = "==1.6.5"
 dbt-snowflake = "==1.6.2"
 sqlfluff = "==2.3.2"
 sqlfluff-templater-dbt = "==2.3.2"

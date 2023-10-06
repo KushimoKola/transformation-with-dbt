@@ -96,11 +96,19 @@ Indicates whether the program is part of the base shelter and overnight services
 Surrogate key created to uniquely identify organizations - harshed from `organization_id` and `organization_name`
 {% enddocs %}
 ## Sector Information
+{% docs toronto_shelter_sector_guid %}
+This is the unique identifier for shelter sector.
+{% enddocs %}
+
 {% docs toronto_shelter_sector %}
 A means of categorizing homeless shelters based on the gender, age and household size of the service user group(s) served at the shelter location. There are currently five shelter sectors in Toronto: adult men, adult women, mixed adult (co-ed or all gender), youth and family.
 {% enddocs %}
 
 ## Overnight Service Type Information
+{% docs toronto_shelter_type_guid %}
+This is the unique identifier for shelter service type.
+{% enddocs %}
+
 {% docs toronto_shelter_overnight_service_type %}
 Identifies the type of overnight service being provided. (Options are: Shelter, 24-Hour Respite, Motel/Hotel, Interim Housing, Warming Centre, 24-Hour Women's Drop-in, Isolation/Recovery Site)
 {% enddocs %}
@@ -162,4 +170,14 @@ The proportion of actual bed capacity that is occupied for the reporting date. C
 
 {% docs toronto_shelter_occupancy_rate_rooms %}
 The proportion of actual room capacity that is occupied for the reporting date. Calculated as OCCUPIEDROOMS divided by CAPACITYACTUAL_ROOM.
+{% enddocs %}
+
+## Location Shelter - Intermediate model
+{% docs location_shelter_guid %}
+Unique identifier for location and shelter
+{% enddocs %}
+
+## Organiation Program - Intermediate model
+{% docs organization_program_guid %}
+Unique identifier for organization and program
 {% enddocs %}

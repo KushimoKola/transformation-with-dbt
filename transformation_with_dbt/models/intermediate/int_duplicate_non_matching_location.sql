@@ -1,5 +1,6 @@
 WITH deduplicated_addresses AS (
     SELECT DISTINCT
+        location_id,
         location_postal_code,
         location_address
     FROM {{ ref('stg_toronto_shelter_occupancy') }} as a
@@ -7,6 +8,7 @@ WITH deduplicated_addresses AS (
 ),
 matching_addresses AS (
     SELECT
+        location_id,
         location_postal_code,
         location_address
     FROM deduplicated_addresses
@@ -14,6 +16,7 @@ matching_addresses AS (
 ),
 nonmatching_addresses AS (
     SELECT
+        location_id,
         location_postal_code,
         location_address
     FROM deduplicated_addresses
@@ -21,6 +24,7 @@ nonmatching_addresses AS (
 ),
 combined_addresses AS (
     SELECT
+        da.location_id,
         da.location_postal_code,
         ma.location_postal_code AS location_postal_code_2,
         ma.location_address AS location_address_1,
@@ -31,6 +35,7 @@ combined_addresses AS (
 ),
 final_addresses AS (
     SELECT
+        location_id,
         location_postal_code,
         location_address_1,
         /*For addresses that were mispelled, this logic compare the first 2 words
@@ -54,6 +59,7 @@ final_addresses AS (
 ),
 unpivot_location AS (
     SELECT
+        location_id,
         location_postal_code AS postal_code,
         street
     FROM final_addresses

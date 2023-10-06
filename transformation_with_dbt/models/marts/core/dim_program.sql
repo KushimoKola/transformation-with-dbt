@@ -8,6 +8,7 @@ WITH shelter_program AS (
 final AS (
     SELECT DISTINCT
         {{ dbt_utils.generate_surrogate_key(['program_id', 'program_name']) }} AS program_guid,
+        program_id,
         program_name,
         program_model
     FROM shelter_program

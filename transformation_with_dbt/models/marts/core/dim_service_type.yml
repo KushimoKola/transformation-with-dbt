@@ -1,0 +1,15 @@
+models:
+  - name: dim_service_type
+    description: This table contains information about the shetlers identifiers in the toronto shelter program
+    columns:
+         - name: shelter_type_guid
+           description: '{{ doc("toronto_shelter_type_guid") }}'
+           tests:
+             - unique
+             - not_null
+
+         - name: service_type
+           description: '{{ doc("toronto_shelter_overnight_service_type") }}'
+           tests:
+             - unique
+             - not_null

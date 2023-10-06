@@ -1,0 +1,14 @@
+models:
+  - name: dim_shelter
+    description: This table contains information about the shetlers identifiers in the toronto shelter program
+    columns:
+         - name: shelter_guid
+           description: '{{ doc("toronto_shelter_shelter_id")}}'
+           tests:
+             - unique
+             - not_null
+
+         - name: shelter_group
+           description: '{{ doc("toronto_shelter_shelter_group")}}'
+           tests:
+             - not_null

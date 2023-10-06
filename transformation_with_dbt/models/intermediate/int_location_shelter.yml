@@ -1,0 +1,20 @@
+models:
+  - name: int_location_shelter
+    description: This table contains information about an intermediate model of location and shelter
+    columns:
+         - name: location_shelter_guid
+           description: '{{ doc("location_shelter_guid") }}'
+           tests:
+             - unique
+             - not_null
+
+         - name: shelter_id
+           description: '{{ doc("toronto_shelter_shelter_id") }}'
+           tests: 
+             - not_null
+
+         - name: location_guid
+           description: '{{ doc("toronto_shelter_location_guid") }}'
+           tests:
+             - not_null
+        
