@@ -1,0 +1,20 @@
+models:
+  - name: int_organization_program
+    description: This table contains information about an intermediate model for organization and program
+    columns:
+         - name: organization_program_guid
+           description: '{{ doc("organization_program_guid") }}'
+           tests:
+             - unique
+             - not_null
+
+         - name: program_guid
+           description: '{{ doc("toronto_shelter_program_guid") }}'
+           tests:
+             - not_null
+
+         - name: organization_guid
+           description: '{{ doc("toronto_shelter_organization_guid") }}'
+           tests:
+             - not_null
+        

@@ -10,9 +10,11 @@ models:
 
          - name: shelter_id
            description: '{{ doc("toronto_shelter_shelter_id") }}'
-            - not_null
+           tests: 
+             - not_null
 
          - name: location_guid
            description: '{{ doc("toronto_shelter_location_guid") }}'
-            - not_null
+           tests:
+             - not_null
         

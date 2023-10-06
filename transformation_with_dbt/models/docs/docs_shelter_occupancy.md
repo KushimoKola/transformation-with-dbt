@@ -176,3 +176,8 @@ The proportion of actual room capacity that is occupied for the reporting date. 
 {% docs location_shelter_guid %}
 Unique identifier for location and shelter
 {% enddocs %}
+
+## Organiation Program - Intermediate model
+{% docs organization_program_guid %}
+Unique identifier for organization and program
+{% enddocs %}
