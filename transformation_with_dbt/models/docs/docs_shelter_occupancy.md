@@ -96,6 +96,10 @@ Indicates whether the program is part of the base shelter and overnight services
 Surrogate key created to uniquely identify organizations - harshed from `organization_id` and `organization_name`
 {% enddocs %}
 ## Sector Information
+{% docs toronto_shelter_sector_guid %}
+This is the unique identifier for shelter sector.
+{% enddocs %}
+
 {% docs toronto_shelter_sector %}
 A means of categorizing homeless shelters based on the gender, age and household size of the service user group(s) served at the shelter location. There are currently five shelter sectors in Toronto: adult men, adult women, mixed adult (co-ed or all gender), youth and family.
 {% enddocs %}

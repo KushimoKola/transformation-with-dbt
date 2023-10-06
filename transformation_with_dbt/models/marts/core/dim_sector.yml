@@ -1,0 +1,15 @@
+models:
+  - name: dim_sector
+    description: This table contains information about the unique identifiers for the sectors in the toronto shelter program
+    columns:
+         - name: sector_guid
+           description: '{{ doc("toronto_shelter_sector_guid")}}'
+           tests:
+             - unique
+             - not_null
+
+         - name: sector_name
+           description: '{{ doc("toronto_shelter_sector")}}'
+           tests:
+             - unique
+             - not_null
