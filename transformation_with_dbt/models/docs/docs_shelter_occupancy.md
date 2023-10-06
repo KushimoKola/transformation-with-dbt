@@ -171,3 +171,8 @@ The proportion of actual bed capacity that is occupied for the reporting date. C
 {% docs toronto_shelter_occupancy_rate_rooms %}
 The proportion of actual room capacity that is occupied for the reporting date. Calculated as OCCUPIEDROOMS divided by CAPACITYACTUAL_ROOM.
 {% enddocs %}
+
+## Location Shelter - Intermediate model
+{% docs location_shelter_guid %}
+Unique identifier for location and shelter
+{% enddocs %}
