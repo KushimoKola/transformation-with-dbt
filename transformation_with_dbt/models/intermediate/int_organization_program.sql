@@ -11,14 +11,14 @@ SELECT
     program_guid,
     program_id,
     program_name
-FROM dim_program
+FROM {{ ref('dim_program') }}
 ),
 organization AS (
 SELECT
     organization_guid,
     organization_id,
     organization_name
-FROM dim_organization
+FROM {{ ref('dim_organization') }}
 ),
 final AS (
 SELECT DISTINCT
