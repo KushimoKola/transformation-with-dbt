@@ -57,3 +57,8 @@ The purpose is to run all operation from a virtual env
 
     ERD for warehouse deveopment - Toronto Shelter Occupancy
     ![shelter occupancy](.img/ERD_Toronto_Shelter_Occupancy.png)
+
+## For Best-Practice - Configure `SQLfluff` before building.
+ - In you project root directory, add files
+     - [.sqlfluff](.sqlfluff), and 
+     - [.sqlfluffignore](.sqlfluffignore).

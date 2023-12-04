@@ -7,6 +7,12 @@ models:
            tests:
              - unique
              - not_null
+# Rather ambigous - needs improvement
+         - name: shelter_id
+           description: '{{ doc("toronto_shelter_shelter_id")}}'
+           tests:
+             - unique
+             - not_null
 
          - name: shelter_group
            description: '{{ doc("toronto_shelter_shelter_group")}}'

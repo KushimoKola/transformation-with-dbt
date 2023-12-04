@@ -11,9 +11,9 @@ models:
          - name: street
            description: '{{ doc("toronto_shelter_location_address")}}'
 
-         - name: city
-           description: '{{ doc("toronto_shelter_location_city")}}'
-        
+#         - name: city
+#           description: '{{ doc("toronto_shelter_location_city")}}'
+
          - name: postal_code
            description: '{{ doc("toronto_shelter_location_postal_code")}}'
            tests:
@@ -22,7 +22,7 @@ models:
          - name: province
            description: '{{ doc("toronto_shelter_location_province")}}'
            tests:
-             - not bul
+             - not_null
 
          - name: shelter_address
            description: '{{ doc("toronto_shelter_address")}}'

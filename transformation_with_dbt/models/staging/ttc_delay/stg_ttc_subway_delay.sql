@@ -1,8 +1,11 @@
 with source as (
-    SELECT * FROM {{ source('toronto_transit_commission_delay_data', 'ttc_subway_delay_data')}}
+    select *
+    from
+        {{ source('toronto_transit_commission_delay_data', 'ttc_subway_delay_data') }}
 ),
+
 final as (
-    SELECT 
+    select
         min_delay,
         bound,
         time,
@@ -14,7 +17,8 @@ final as (
         code,
         date,
         line
-        
+
     from source
 )
+
 select * from final

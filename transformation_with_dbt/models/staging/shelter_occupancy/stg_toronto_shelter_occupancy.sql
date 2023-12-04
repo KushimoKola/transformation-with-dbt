@@ -1,9 +1,9 @@
 with source as (
-    SELECT * FROM {{ source('shelter_occupancy', 'toronto_shelter_occupancy')}}
+    select * from {{ source('shelter_occupancy', 'toronto_shelter_occupancy') }}
 ),
 
 final as (
-    select 
+    select
         idempotent_key,
         _id as guid,
         occupancy_date::date as occupancy_date,
@@ -13,11 +13,6 @@ final as (
         capacity_funding_room::int as capacity_funding_room,
         capacity_type,
         location_id,
-        TRIM(location_address) as location_address,
-        TRIM(location_city) as location_city,
-        TRIM(location_name) as location_name,
-        TRIM(location_postal_code) as location_postal_code,
-        TRIM(location_province) as location_province,
         occupancy_rate_beds::int as occupancy_rate_beds,
         occupancy_rate_rooms::int as occupancy_rate_rooms,
         occupied_beds::int as occupied_beds,
@@ -36,8 +31,14 @@ final as (
         unavailable_beds::int as unavailable_beds,
         unavailable_rooms::int as unavailable_rooms,
         unoccupied_beds::int as unoccupied_beds,
-        unoccupied_rooms::int as unoccupied_rooms
-    
+        unoccupied_rooms::int as unoccupied_rooms,
+        TRIM(location_address) as location_address,
+        TRIM(location_city) as location_city,
+        TRIM(location_name) as location_name,
+        TRIM(location_postal_code) as location_postal_code,
+        -- Assuming Province as Ontario for all
+        COALESCE (TRIM(location_province), 'ON') as location_province
+
     from source
 )
 

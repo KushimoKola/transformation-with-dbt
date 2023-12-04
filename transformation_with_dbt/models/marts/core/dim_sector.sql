@@ -4,4 +4,5 @@ WITH final AS (
         sector AS sector_name
     FROM {{ ref('stg_toronto_shelter_occupancy') }}
 )
+
 SELECT * FROM final

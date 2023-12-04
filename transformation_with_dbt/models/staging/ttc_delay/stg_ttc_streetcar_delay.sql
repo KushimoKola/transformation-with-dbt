@@ -1,8 +1,11 @@
 with source as (
-    SELECT * FROM {{ source('toronto_transit_commission_delay_data', 'ttc_streetcar_delay_data')}}
+    select *
+    from
+        {{ source('toronto_transit_commission_delay_data', 'ttc_streetcar_delay_data') }}
 ),
+
 final as (
-    select 
+    select
         time,
         gap,
         incident,
@@ -14,7 +17,8 @@ final as (
         bound,
         delay,
         location
-        
+
     from source
 )
+
 select * from final

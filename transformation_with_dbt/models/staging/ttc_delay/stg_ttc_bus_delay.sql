@@ -1,6 +1,9 @@
 with source as (
-    SELECT * FROM {{ source('toronto_transit_commission_delay_data', 'ttc_bus_delay_data')}}
+    select *
+    from
+        {{ source('toronto_transit_commission_delay_data', 'ttc_bus_delay_data') }}
 ),
+
 final as (
     select
         bound,
@@ -14,7 +17,8 @@ final as (
         location,
         location_full,
         time
-        
-    FROM source
+
+    from source
 )
+
 select * from final
