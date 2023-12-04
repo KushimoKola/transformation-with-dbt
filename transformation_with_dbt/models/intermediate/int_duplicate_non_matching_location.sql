@@ -56,7 +56,7 @@ final_addresses AS (
         location_id,
         location_postal_code,
         location_address_1,
-        /*For addresses that were mispelled, this logic compare the first 2 words
+        /*For addresses that were misspelt, this logic compare the first 2 words
         in each of the address we have classified, if the result matches using the
         regexp logic, we return null, else, location_address_2
         Then we dedupped using with the qualify function.

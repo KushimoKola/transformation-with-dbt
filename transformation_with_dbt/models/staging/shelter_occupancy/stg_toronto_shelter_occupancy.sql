@@ -36,7 +36,8 @@ final as (
         TRIM(location_city) as location_city,
         TRIM(location_name) as location_name,
         TRIM(location_postal_code) as location_postal_code,
-        TRIM(location_province) as location_province
+        -- Assuming Province as Ontario for all
+        COALESCE (TRIM(location_province), 'ON') as location_province
 
     from source
 )

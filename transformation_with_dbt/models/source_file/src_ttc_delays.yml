@@ -4,7 +4,7 @@ sources:
   - name: toronto_transit_commission_delay_data
     description: 'This is a database of TTC delay data migrated with API from Toronto Open Data'
     database: analytics
-    schema: google_drive
+    schema: ttc
     tables:
       - name: ttc_bus_delay_data
         description: 'This contains TTC bus delay data'

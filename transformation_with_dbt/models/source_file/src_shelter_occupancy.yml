@@ -4,7 +4,7 @@ sources:
   - name: shelter_occupancy
     description: 'This is a database of shelter occupancy data migrated with API from Toronto Open Data'
     database: analytics
-    schema: lake
+    schema: shelter
     tables:
      - name: toronto_shelter_occupancy
        description: 'This contains data of Daily Toronto shelter occupancy'
