@@ -14,9 +14,11 @@ Follow along as I take you through the process.
 ## CREATING A `dbt` PROJECT
 
 1. Create an empty Github repo
-2. `dbt init project_name` in the repo
+2. Clone Github repo locally
+3. `dbt init project_name` in the repo
     1. Don’t configure the repo here. This would allow dbt create a blank/empty repository
-3. cd into the repository root folder `cd transformation_with_dbt`
+4. cd into the repository root folder `cd transformation_with_dbt`
+5. Open `/.dbt/profiles.yml` to configure profile
 
 The purpose is to run all operation from a virtual env
 
@@ -28,16 +30,17 @@ The purpose is to run all operation from a virtual env
     url = "https://pypi.org/simple"
     verify_ssl = true
     name = "pypi"
-    
+
     [packages]
-    dbt-core = "==1.6.3"
-    dbt-snowflake = "==1.6.2"
-    sqlfluff = "==2.3.2"
-    sqlfluff-templater-dbt = "==2.3.2"
-    pre-commit = "==3.4.0"
-    
+    dbt-core = "==1.9.8"
+    dbt-snowflake = "==1.9.4"
+    dbt-databricks = "==1.10.3"
+    sqlfluff = "==3.4.0"
+    sqlfluff-templater-dbt = "==3.4.0"
+    pre-commit = "==4.2.0"
+
     [requires]
-    python_version = "3.11"
+    python_version = "3.12"
     ```
     
 3. Run `pip install pipenv`
@@ -46,6 +49,9 @@ The purpose is to run all operation from a virtual env
 6. Confirm if dbt has been successfully installed
     
     Run `dbt --version`
+
+Resources: [Configure dbt core in databricks](https://youtu.be/frkz-dBiaM4)
+Documentation: [dbt Databricks](https://docs.getdbt.com/docs/core/connect-data-platform/databricks-setup)
     
     You should have something as this
     
